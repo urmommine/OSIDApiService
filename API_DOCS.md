@@ -13,7 +13,6 @@ Seluruh endpoint berada di bawah prefix `/api` dan (kecuali register & login) me
     "name": "Nama Lengkap",
     "email": "email@domain.com",
     "password": "password",
-    "password_confirmation": "password"
   }
   ```
 - **Response:**

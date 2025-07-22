@@ -34,6 +34,5 @@ Route::middleware('auth:sanctum')->group(function() {
     // Get penduduk by NIK for a specific desa
     Route::get('/penduduk/{desa}/nik/{nik}', [TwebPendudukController::class, 'getByNik']);
     // Get detailed clusters
-    
 
 });
