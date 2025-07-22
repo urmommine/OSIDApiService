@@ -1,0 +1,39 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class RtmRejuno extends Model
+{
+    protected $table = 'tweb_rtm';
+    protected $primaryKey = 'id';
+    protected $connection = 'db_rejuno';
+
+    protected $fillable = [
+        'id',
+        'nik_kepala',
+        'no_kk',
+        'tgl_daftar',
+        'kelas_sosial',
+        'bdt',
+        'terdaftar_dtks',
+    ];
+
+    public function kepalaKeluarga()
+    {
+        return $this->hasOne(TwebPendudukRejuno::class, 'id', 'nik_kepala');
+    }
+
+    public function anggota()
+    {
+        return $this->hasMany(TwebPendudukRejuno::class, 'id_rtm', 'no_kk')->status();
+    }
+
+    public function scopeStatus($query)
+    {
+        return $query->whereHas('kepalaKeluarga', function($q) {
+            $q->status()->where('rtm_level', 1);
+        });
+    }
+} 
