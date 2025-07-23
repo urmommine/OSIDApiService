@@ -34,6 +34,8 @@ php artisan serve --host=<ipv4-address> --port=<any>
 ## Dokumentasi lengkap REST API
 
 [disini!](https://github.com/urmommine/OSIDApiService/blob/main/API_DOCS.md)
+[consumer!]([https://github.com/urmommine/OSIDApiService/blob/main/API_DOCS.md](https://github.com/urmommine/OSIDApiConsume))
+
 
 
 ## Example REST API Usage
